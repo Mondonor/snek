@@ -79,7 +79,7 @@ class Game:
 		self.END_SUCCESS = False
 
 	def losecond(self):
-		self.END_SUCCESS = False
+		self.IN_PLAY = False
 
 	def eat(self):
 		if self.score == 100:
