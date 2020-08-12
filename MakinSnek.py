@@ -85,10 +85,10 @@ class Game:
 		if self.score == 100:
 			self.wincond()
 		self.length+=1
-		self.memlist[length-1] = [self.position.x , self.position.y]
+		self.memlist[self.length-1] = [self.position.x , self.position.y]
 		self.food.x = randint(1,24) * 20
 		self.food.y = randint(1,24) * 20
-		while [self.food.x,self.food.y] in memlist:
+		while [self.food.x,self.food.y] in self.memlist:
 			self.food.x = randint(1,24) * 20
 			self.food.y = randint(1,24) * 20
 		self.score+=1
@@ -143,13 +143,14 @@ def main():
 	ACTIVE = True
 
 	snek.memlist[0] = [snek.position.x,snek.position.y]
+	
 	count = -5
+	dire = "R"
+	diretemp = "R"
 	
 	while ACTIVE:
 		pygame.time.delay(snek.rate)
 
-		dire = "R"
-		diretemp = "R"
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
