@@ -43,7 +43,7 @@ class Game:
 		score_board_rect.center = (80, 8)
 		self.display.blit(score_board, score_board_rect)
 
-	def PauseScreen():
+	def PauseScreen(self):
 		pause = self.font2.render("Press 'u' to unpause.", True, self.colors.WHITE)
 		pause_rect = pause.get_rect()
 		pause_rect.center = (250, 250)
