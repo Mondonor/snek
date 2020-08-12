@@ -94,9 +94,9 @@ class Game:
 		self.score+=1
 		if self.score%10 == 0:
 			self.level+=1
-			self.rate-=1
+			self.rate=self.rate-1
 		if self.score % 20 == 0:
-			self.countcond-=1
+			self.countcond=self.countcond-1
 
 	def move(self, dire):
 		if dire == "R":
@@ -187,8 +187,8 @@ def main():
 			if keys[pygame.K_DOWN]:
 				if dire == "U":
 					pass
-			else:
-				diretemp = "D"
+				else:
+					diretemp = "D"
 	    
 			if  count <= snek.countcond:
 					count = count + 1
