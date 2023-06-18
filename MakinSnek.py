@@ -74,23 +74,7 @@ yf = 260
 
 #food position
 def gamestatereset():
-    global x
-    global y
-    global rate
-    global length
-    global dire
-    global diretemp
-    global count
-    global countcond
-    global score
-    global run
-    global level
-    global gamebool
-    global winbool
-    global memlist
-    global xf
-    global yf
-    global prestige
+    global x, prestige, yf, xf, memlist, winbool, gamebool, level, run, score, countcond, count, diretemp, dire, length, rate, y
     x = 40
     y = 40
     rate = 17
@@ -114,16 +98,12 @@ def gamestatereset():
     yf = 260
 
 def wincond():
-    global winbool
-    global gamebool
+    global winbool, gamebool
     winbool = True
     gamebool = False
 
 def winScreen():
-    global text1win
-    global text2win
-    global textw1
-    global textw2
+    global text1win, text2win, textw1, textw2
     win.blit(text1win, textw1)
     win.blit(text2win, textw2)
 
@@ -132,25 +112,13 @@ def losecond():
     gamebool = False
 
 def loseScreen():
-    global text1lose
-    global text2lose
-    global text3lose
-    global textl1
-    global textl2
-    global textl3
+    global text1lose, text2lose, text3lose, text3lose, textl1, textl2, textl3 
     win.blit(text1lose, textl1)
     win.blit(text2lose, textl2)
     win.blit(text3lose,textl3)
 
 def eat():
-    global rate
-    global length
-    global memlist
-    global xf
-    global yf
-    global score
-    global level
-    global countcond
+    global rate, length, memlist, xf, yf, score, level, countcond
     if score == 100:
         wincond()
     length = length + 1
@@ -206,16 +174,12 @@ def collcheck():
             losecond()
             
 def dispTEXT():
-    global text
-    global score
+    global text, score
     text = font.render(f'SCORE: {score}  PRESTIGE: {prestige}', True, white)
     win.blit(text,textRect)
 
 def PauseScreen():
-    global textPause
-    global textp
-    global b
-    global key2
+    global textPause, textp, b, key2
     win.blit(textPause,textp)
     pygame.display.update()
     key2 = pygame.key.get_pressed()
